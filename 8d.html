@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conditional Statements and Loops</title>
+</head>
+<body>
+<h1>Conditional Statements and Loops</h1>
+
+<h2>a. Larger Number</h2>
+<button onclick="findLargest()">Find Largest Number</button>
+<p id="largestNumberResult"></p>
+
+<h2>b. Week Days</h2>
+<button onclick="displayWeekDay()">Display Week Day</button>
+<p id="weekDayResult"></p>
+
+<h2>c. Print 1 to 10</h2>
+<button onclick="printNumbers()">Print Numbers</button>
+<p id="numbersResult"></p>
+
+<h2>d. Object Data</h2>
+<button onclick="displayObjectData()">Display Object Data</button>
+<p id="objectDataResult"></p>
+
+<script>
+function findLargest() {
+  var num1 = parseInt(prompt("Enter first integer:"));
+  var num2 = parseInt(prompt("Enter second integer:"));
+  var num3 = parseInt(prompt("Enter third integer:"));
+
+  if (num1 === num2 && num2 === num3) {
+    document.getElementById("largestNumberResult").innerHTML = "EQUAL NUMBERS";
+  } else {
+    var largest = Math.max(num1, num2, num3);
+    alert(largest + " LARGER NUMBER");
+    document.getElementById("largestNumberResult").innerHTML = "Largest number is: " + largest;
+  }
+}
+
+function displayWeekDay() {
+  var dayNumber = parseInt(prompt("Enter a number between 1 and 7:"));
+  var day;
+
+  switch (dayNumber) {
+    case 1:
+      day = "Sunday";
+      break;
+    case 2:
+      day = "Monday";
+      break;
+    case 3:
+      day = "Tuesday";
+      break;
+    case 4:
+      day = "Wednesday";
+      break;
+    case 5:
+      day = "Thursday";
+      break;
+    case 6:
+      day = "Friday";
+      break;
+    case 7:
+      day = "Saturday";
+      break;
+    default:
+      day = "Invalid day";
+  }
+
+  document.getElementById("weekDayResult").innerHTML = "Day: " + day;
+}
+
+function printNumbers() {
+  var forLoop = "For Loop: ";
+  for (var i = 1; i <= 10; i++) {
+    forLoop += i + " ";
+  }
+
+  var whileLoop = "While Loop: ";
+  var j = 1;
+  while (j <= 10) {
+    whileLoop += j + " ";
+    j++;
+  }
+
+  var doWhileLoop = "Do-While Loop: ";
+  var k = 1;
+  do {
+    doWhileLoop += k + " ";
+    k++;
+  } while (k <= 10);
+
+  document.getElementById("numbersResult").innerHTML = forLoop + "<br>" + whileLoop + "<br>" + doWhileLoop;
+}
+
+function displayObjectData() {
+  var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    city: "New York"
+  };
+
+  var forInLoop = "For-In Loop: ";
+  for (var key in person) {
+    forInLoop += key + ": " + person[key] + ", ";
+  }
+
+  document.getElementById("objectDataResult").innerHTML = forInLoop;
+}
+</script>
+</body>
+</html>

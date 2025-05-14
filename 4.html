@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>String Object Example</title>
+</head>
+<body>
+<h1>String Properties and Methods</h1>
+<p id="stringDemo"></p>
+
+<script>
+var str = "Hello World!";
+document.getElementById("stringDemo").innerHTML = "Original string: " + str;
+
+var strLength = str.length;
+document.getElementById("stringDemo").innerHTML += "<br>String length: " + strLength;
+
+var upperCase = str.toUpperCase();
+document.getElementById("stringDemo").innerHTML += "<br>Uppercase: " + upperCase;
+
+var lowerCase = str.toLowerCase();
+document.getElementById("stringDemo").innerHTML += "<br>Lowercase: " + lowerCase;
+
+var index = str.indexOf("World");
+document.getElementById("stringDemo").innerHTML += "<br>Index of 'World': " + index;
+
+var lastIndex = str.lastIndexOf("o");
+document.getElementById("stringDemo").innerHTML += "<br>Last index of 'o': " + lastIndex;
+
+var sliced = str.slice(0, 5);
+document.getElementById("stringDemo").innerHTML += "<br>Sliced (0, 5): " + sliced;
+
+var subString = str.substring(0, 5);
+document.getElementById("stringDemo").innerHTML += "<br>Substring (0, 5): " + subString;
+
+var replaced = str.replace("World", "JavaScript");
+document.getElementById("stringDemo").innerHTML += "<br>Replaced 'World' with 'JavaScript': " + replaced;
+
+var concatenated = str.concat(" Welcome!");
+document.getElementById("stringDemo").innerHTML += "<br>Concatenated: " + concatenated;
+
+var trimmed = "   Trim me!   ";
+document.getElementById("stringDemo").innerHTML += "<br>Original string with spaces: '" + trimmed + "'";
+document.getElementById("stringDemo").innerHTML += "<br>Trimmed string: '" + trimmed.trim() + "'";
+
+var charAt = str.charAt(0);
+document.getElementById("stringDemo").innerHTML += "<br>Character at index 0: " + charAt;
+
+var splitString = str.split(" ");
+document.getElementById("stringDemo").innerHTML += "<br>Split string into array: " + splitString;
+</script>
+</body>
+</html>

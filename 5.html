@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RegExp Object Example</title>
+</head>
+<body>
+<h1>RegExp Properties and Methods</h1>
+<p id="regexDemo"></p>
+
+<script>
+var text = "The quick brown fox jumps over the lazy dog. Fox are great.";
+document.getElementById("regexDemo").innerHTML = "Original text: " + text;
+var regex = /fox/i; 
+var isFound = regex.test(text);
+document.getElementById("regexDemo").innerHTML += "<br><br>Test if 'fox' exists (case-insensitive): " + isFound;
+var match = regex.exec(text);
+document.getElementById("regexDemo").innerHTML += "<br>First match of 'fox' (case-insensitive): " + match;
+var regexGlobal = /fox/gi; 
+var result;
+var allMatches = [];
+
+while ((result = regexGlobal.exec(text)) !== null) {
+  allMatches.push(result[0] + " at index " + result.index);
+}
+
+document.getElementById("regexDemo").innerHTML += "<br><br>All matches of 'fox' (case-insensitive, global): " + allMatches.join(", ");
+var pattern = regex.source;
+document.getElementById("regexDemo").innerHTML += "<br><br>RegExp pattern: " + pattern;
+document.getElementById("regexDemo").innerHTML += "<br>Last index after global search: " + regexGlobal.lastIndex;
+var multilineText = "First line\nSecond line\nThird line";
+var regexMultiline = /^Second/m;
+document.getElementById("regexDemo").innerHTML += "<br><br>Multiline text: " + multilineText.replace(/\n/g, "<br>");
+document.getElementById("regexDemo").innerHTML += "<br>Test if 'Second' exists at the beginning of a line: " + regexMultiline.test(multilineText);
+</script>
+</body>
+</html>

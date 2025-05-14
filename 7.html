@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User-Defined Object Example</title>
+</head>
+<body>
+<h1>User-Defined Object</h1>
+<p id="objectDemo"></p>
+
+<script>
+function Person(firstName, lastName, age) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.fullName = function() { 
+    return this.firstName + " " + this.lastName;
+  };
+}
+var person1 = new Person("John", "Doe", 30);
+var person2 = new Person("Jane", "Smith", 25);
+var output = "Person 1:<br>";
+output += "Full Name: " + person1.fullName() + "<br>";
+output += "Age: " + person1.age + "<br><br>";
+
+output += "Person 2:<br>";
+output += "Full Name: " + person2.fullName() + "<br>";
+output += "Age: " + person2.age + "<br>";
+
+document.getElementById("objectDemo").innerHTML = output;
+</script>
+</body>
+</html>

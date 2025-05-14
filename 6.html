@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Date Object Example</title>
+</head>
+<body>
+<h1>Date Properties and Methods</h1>
+<p id="dateDemo"></p>
+
+<script>
+var currentDate = new Date();
+document.getElementById("dateDemo").innerHTML = "Current Date: " + currentDate;
+
+var year = currentDate.getFullYear();
+document.getElementById("dateDemo").innerHTML += "<br>Year: " + year;
+
+var month = currentDate.getMonth(); 
+document.getElementById("dateDemo").innerHTML += "<br>Month: " + month;
+
+var day = currentDate.getDate();
+document.getElementById("dateDemo").innerHTML += "<br>Day: " + day;
+
+var hour = currentDate.getHours();
+document.getElementById("dateDemo").innerHTML += "<br>Hour: " + hour;
+
+var minutes = currentDate.getMinutes();
+document.getElementById("dateDemo").innerHTML += "<br>Minutes: " + minutes;
+
+var seconds = currentDate.getSeconds();
+document.getElementById("dateDemo").innerHTML += "<br>Seconds: " + seconds;
+
+var milliseconds = currentDate.getMilliseconds();
+document.getElementById("dateDemo").innerHTML += "<br>Milliseconds: " + milliseconds;
+
+var dayOfWeek = currentDate.getDay();
+document.getElementById("dateDemo").innerHTML += "<br>Day of the week: " + dayOfWeek;
+
+currentDate.setFullYear(2024);
+document.getElementById("dateDemo").innerHTML += "<br><br>Date after setFullYear(2024): " + currentDate;
+
+currentDate.setMonth(11); 
+document.getElementById("dateDemo").innerHTML += "<br>Date after setMonth(11): " + currentDate;
+
+currentDate.setDate(25);
+document.getElementById("dateDemo").innerHTML += "<br>Date after setDate(25): " + currentDate;
+
+currentDate.setHours(10);
+document.getElementById("dateDemo").innerHTML += "<br>Date after setHours(10): " + currentDate;
+var dateString = currentDate.toDateString();
+document.getElementById("dateDemo").innerHTML += "<br><br>Date as string: " + dateString;
+
+var timeString = currentDate.toTimeString();
+document.getElementById("dateDemo").innerHTML += "<br>Time as string: " + timeString;
+
+var isoString = currentDate.toISOString();
+document.getElementById("dateDemo").innerHTML += "<br>Date as ISO string: " + isoString;
+</script>
+</body>
+</html>
